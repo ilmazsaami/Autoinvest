@@ -18,10 +18,10 @@ public class infopage1 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_infopage1, container, false);
-       /* signin= ((info)getActivity()).signin_bt;
-        signup = ((info)getActivity()).signup_bt;
-        signin.setBackgroundColor(Color.rgb(230,59,81));
-        signup.setBackgroundColor(Color.rgb(230,59,81));*/
+//       /* signin= ((info)getActivity()).signin_bt;
+//        signup = ((info)getActivity()).signup_bt;
+//        signin.setBackgroundColor(Color.rgb(230,59,81));
+//        signup.setBackgroundColor(Color.rgb(230,59,81));*/
         return view;
     }
 }

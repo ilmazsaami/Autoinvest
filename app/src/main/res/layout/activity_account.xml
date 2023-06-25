@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="?attr/colorPrimary"
+    android:title="@string/app_name"
+
+    android:elevation="4dp"
+    android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    />
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- The main content view -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_above="@+id/bottom_bar1"
+            android:id="@+id/list_swipe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ListView
+                android:id="@+id/values_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_above="@+id/bottom_bar1"
+            android:id="@+id/empty_swipe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/empty_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/loading"
+                    android:textColor="@color/black"/>
+            </ScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            <LinearLayout
+                android:id="@+id/bottom_bar1"
+                android:layout_above="@+id/bottom_bar2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/colorPrimaryDark2">
+                <EditText
+                    android:id="@+id/input1"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Money to Deposit"
+                    android:textColorHint="@color/colorSupport"
+                    android:textColor="@color/white"
+                    android:inputType="numberDecimal"
+
+                    />
+                <Button
+                    android:id="@+id/deposit"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:text="DEPOSIT"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/bottom_bar2"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/colorPrimaryDark2">
+                <EditText
+                    android:id="@+id/input2"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Money to Withdraw"
+                    android:textColorHint="@color/colorSupport"
+                    android:textColor="@color/white"
+                    android:inputType="numberDecimal"
+
+                />
+                <Button
+                    android:id="@+id/withdraw"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:text="WITHDRAW"/>
+            </LinearLayout>
+        </RelativeLayout>
+            <!-- The navigation drawer -->
+            <ListView android:id="@+id/left_drawer"
+                android:layout_width="240dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:choiceMode="singleChoice"
+                android:divider="@color/colorPrimaryDark"
+                android:dividerHeight="2dp"
+                android:background="@color/white"
+                />
+    </androidx.drawerlayout.widget.DrawerLayout>
+</RelativeLayout>
